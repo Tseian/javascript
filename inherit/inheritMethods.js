@@ -93,9 +93,12 @@ const inheriTemCons = (function () {
 }());
 
 function Cc(name) {
+    Pp.apply(this, arguments);
     this.name = name;
 }
-function Pp() { }
+function Pp(ss) {
+    this.ss = ss;
+};
 
 Pp.prototype.say = function () {
     console.log("hello name", this.name);
@@ -104,7 +107,7 @@ Pp.prototype.say = function () {
 inheriTemCons(Cc, Pp);
 let cc = new Cc('tse ian');
 cc.say();
-
+console.log("cc.ss====", cc.ss);
 // 使用Object.create方法进行对象继承
 let P = {
     name: "P",
@@ -116,3 +119,4 @@ let P = {
 let C = Object.create(P);
 C.name = 'tse ian';
 C.sayName();
+
