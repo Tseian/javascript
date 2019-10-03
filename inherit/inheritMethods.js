@@ -111,7 +111,9 @@ console.log("cc.ss====", cc.ss);
 // 使用Object.create方法进行对象继承
 let P = {
     name: "P",
-    sayName: function () { console.log("hello ", this.name) }
+    sayName: function () {
+        console.log("hello ", this.name);
+    }
 }
 
 let C = Object.create(P);

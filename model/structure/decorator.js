@@ -8,24 +8,23 @@ function Sale(price) {
     this.decorators_list = {};
 }
 
-Sale.decorators = {};
-Sale.decorators.fedtax = {
-    getPrice: function (price) {
-        return price + (price * 5 / 100);
+Sale.decorators = {
+    fedtax: {
+        getPrice: function (price) {
+            return price + (price * 5 / 100);
+        }
+    },
+    quebec: {
+        getPrice: function (price) {
+            return price + (price * 5 / 100);
+        }
+    },
+    money: {
+        getPrice: function (price) {
+            return '$' + price.toFixed(2);
+        }
     }
-}
-
-Sale.decorators.quebec = {
-    getPrice: function (price) {
-        return price + price * 7.5 / 100;
-    }
-}
-
-Sale.decorators.money = {
-    getPrice: function (price) {
-        return '$' + price.toFixed(2);
-    }
-}
+};
 
 /**
  * 增加装饰器
@@ -45,7 +44,9 @@ Sale.prototype.delDecorate = function (type, decorator) {
         list.splice(index, 1);
     }
 }
-
+/**
+ * 获取参数
+ */
 Sale.prototype.getPrice = function () {
     let price = this.price, i,
         type = "getPrice", name,
@@ -67,5 +68,4 @@ console.log(sale.getPrice());
 let sale2 = new Sale(110);
 sale2.decorate('getPrice', 'quebec');
 sale2.decorate('getPrice', 'money');
-// sale2.delDecorate('getPrice', 'money');
-console.log(sale2.getPrice())
+console.log(sale2.getPrice());
