@@ -17,6 +17,7 @@ Singleton.prototype.setName = function (name) { this.name = name; };
 Singleton.prototype.getName = function () { return this.name; };
 
 let s1 = Singleton.getInstance();
+s1.setName('tse ian');
 let s2 = Singleton.getInstance();
 
-console.log(s1.getName(), s2.getName());
+console.log(s1.getName(), s2.getName()); // tse ian tse ian
