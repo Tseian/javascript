@@ -1,12 +1,14 @@
 ## 基本数据类型
-- null  表示空值或不存在的字段
-- boolean true和false
-- number 默认是64位浮点型数字
-- string 字符串
-- date 日期
-- regex 正则表达式
-- array 
-- embed object 内嵌文档
-- objectId 对象id
-- binary 二进制数据
-- code 代码
+
+* null  表示空值或不存在的字段
+* boolean true和false
+* number 默认是64位浮点型数字
+* string 字符串
+* date 日期
+* regex 正则表达式
+* array 
+* embed object 内嵌文档
+* objectId 对象id
+* binary 二进制数据
+* code 代码
+
