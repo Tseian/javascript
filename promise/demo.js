@@ -1,7 +1,7 @@
 let promise = new Promise(function (resolve, reject) {
     setTimeout(() => {
         resolve('hello')
-    }, 1000 * 5)
+    }, 1000 * 2)
 });
 
 promise.then(function (value) {

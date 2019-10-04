@@ -8,11 +8,14 @@ async function async1() {
 async function async2() {
     console.log("async2 end");
 }
-async1();
 
 setTimeout(function () {
     console.log("setTimeout");
 }, 0);
+
+setImmediate(function () {
+    console.log("setImmediate");
+});
 
 new Promise(resolve => {
     console.log("Promise");
@@ -20,11 +23,16 @@ new Promise(resolve => {
 })
     .then(function () {
         console.log("promise1");
+        return 1;
     })
     .then(function () {
         console.log("promise2");
     });
+async1();
 
+process.nextTick(function () {
+    console.log("nextTick")
+});
 console.log("script end");
 
 /*
@@ -36,6 +44,16 @@ promise1
 promise2
 async1 end
 setTimeout
+setImmediate
+//macro-task: script (整体代码)，setTimeout, setInterval, setImmediate, I/O, UI rendering.
+//micro-task: process.nextTick, Promise(原生)，Object.observe，MutationObserver
+// 微观任务队列 process.nextTick promise.then.catch.finally mutationObserver
+// 宏观任务队列 DOM事件队列 setTimeout setInterval事件任务队列 异步I/O回调
+// 观察者优先顺序
+// idle观察者 > I/O观察者 > check观察者
+// idle观察者：process.nextTick
+// I/O观察者：一般性的I/O回调，如网络，文件，数据库IO等
+// check观察者：setImmediate ,setTimeout
 
 // 流程解释
 正常输出script start

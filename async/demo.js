@@ -6,6 +6,7 @@ let pr = function () {
     })
 }
 
+// async函数返回promise
 async function runPr() {
     let a = await pr().catch(e => { console.log(e) });
     console.log(a)
