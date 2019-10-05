@@ -12,3 +12,10 @@
 * binary 二进制数据
 * code 代码
 
+
+
+### objectId 
+体积小，12byte，近乎唯一，能快速生成，有顺序。
+- a 4-byte value representing the seconds since the Unix epoch, 时间戳
+- a 5-byte random value, and 随机数
+- a 3-byte counter, starting with a random value. 从随机数开始的计数器
