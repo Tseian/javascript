@@ -53,7 +53,7 @@ setImmediate
 // idle观察者 > I/O观察者 > check观察者
 // idle观察者：process.nextTick
 // I/O观察者：一般性的I/O回调，如网络，文件，数据库IO等
-// check观察者：setImmediate ,setTimeout
+// check观察者：setImmediate < setTimeout
 
 // 流程解释
 正常输出script start
