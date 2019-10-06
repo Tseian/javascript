@@ -87,11 +87,23 @@ console.log(require.toString());
 let immediate1 = setImmediate(() => {
     console.log("setImmediate");
 });
+console.log('immediate1==', immediate1)
 // 13.setInterval
 let interval1 = setInterval(() => {
     console.log("setInterval");
 }, 0);
+console.log("interval1==", interval1);
+
 // 14.setTimeout
 let timeout1 = setTimeout(() => {
     console.log("setTimeout");
 }, 0);
+
+console.log("timeout1==", timeout1);
+
+// 15.TextDecoder 
+// 16.TextEncoder
+// 17.URL  
+// 18.URLSearchParams  提供对 URL 查询部分的读写权限
+// 19.WebAssembly 
+// 20.Buffer
