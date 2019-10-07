@@ -39,6 +39,7 @@ let joe = {
     }
 };
 
+
 paper.subscribe(joe.readPaper, 'daily')
 paper.subscribe(joe.readMonthlyPaper, 'monthly')
 paper.unsubscribe(joe.readMonthlyPaper, 'monthly')

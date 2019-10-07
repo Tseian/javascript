@@ -74,4 +74,3 @@ sale2.decorate('getPrice', 'quebec');
 sale2.decorate('getPrice', 'money');
 console.log(sale2.getPrice());
 ```
-

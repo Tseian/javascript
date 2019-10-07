@@ -65,7 +65,7 @@ sale.decorate('getPrice', 'quebec');
 sale.decorate('getPrice', 'money');
 console.log(sale.getPrice());
 
-let sale2 = new Sale(110);
+let sale2 = new Sale(100);
 sale2.decorate('getPrice', 'quebec');
 sale2.decorate('getPrice', 'money');
 console.log(sale2.getPrice());

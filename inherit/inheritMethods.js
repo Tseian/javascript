@@ -77,7 +77,7 @@ function inheritTheSameProto(C, P) {
     C.prototype = P.prototype;
 }
 
-// 5 临时构造函数
+// 5 临时构造函数 重新设置构造方法
 // child.__proto__ -> F.prototype -> Paran.prototype 
 // child.__proto__.constructor -> C
 // child.uber -> P.prototype
@@ -89,6 +89,10 @@ const inheriTemCons = (function () {
         // new F().__proto__ -> F.prototype（P.prototype）
         C.prototype.constructor = C;
         C.uber = P.prototype
+
+        // C.prototype.__proto__ -> F.prototype -> p.prototype 
+        // let c = new C() 
+        // c.__proto__ -> C.prototype -> c.prototype.__proto__ -> F.prototype -> P.prototype 
     }
 }());
 
