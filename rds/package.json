@@ -1,0 +1,15 @@
+{
+  "name": "modem-pool-socekt-client",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "ioredis": "^3.2.2"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.0"
+  }
+}
