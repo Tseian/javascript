@@ -1,4 +1,4 @@
-// 通过共享原型实现继承属性，所以当实例对象可以通过__proto__对原型进行修改
+// // 通过共享原型实现继承属性，所以当实例对象可以通过__proto__对原型进行修改
 class Point {
     // 构造方法
     constructor() { }
@@ -66,4 +66,31 @@ console.log(A.prototype.__proto__ === Object.prototype);
 console.log(Object.getPrototypeOf(ColorPoint) === Point);
 
 // super 关键字在子类中代表父类实例 对象总是继承其他对象，所以可以在任意一个对象中使用super关键字
+
+// class A {
+//     constructor() { }
+//     a() {
+//         console.log("hh");
+//     }
+// }
+
+
+// class B extends A {
+//     constructor() {
+//         super()
+//     }
+// }
+
+// class C extends A {
+
+// }
+
+// let c = new C()
+// let b = new B()
+
+// c.__proto__.__proto__.valueOf = function () {
+//     return 1
+// }
+// console.log(b.valueOf())
+// console.log(b.a())
 

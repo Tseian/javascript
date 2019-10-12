@@ -87,7 +87,7 @@ console.log(require.toString());
 let immediate1 = setImmediate(() => {
     console.log("setImmediate");
 });
-console.log('immediate1==', immediate1)
+console.log('immediate1==', immediate1);
 // 13.setInterval
 let interval1 = setInterval(() => {
     console.log("setInterval");
