@@ -18,5 +18,3 @@ q.on('response', (d) => {
     console.log('d', d)
 })
 q.end()
-
-
