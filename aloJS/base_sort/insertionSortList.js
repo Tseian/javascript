@@ -11,13 +11,9 @@
  */
 const list = require("../list");
 var insertionSortList = function (head) {
-    let current = head;
-    let min = current.val;
-    while (current) {
-        
-        if (min > current.val) {
+    let res = {};
+    while (head) {
 
-        }
     }
 };
 
