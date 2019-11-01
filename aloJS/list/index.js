@@ -5,8 +5,14 @@ module.exports = {
         next: {
             val: 23,
             next: {
-                val: 0,
-                next: null
+                val: 23,
+                next: {
+                    val: 22,
+                    next: {
+                        val: 3,
+                        next: null
+                    }
+                }
             }
         }
     }
