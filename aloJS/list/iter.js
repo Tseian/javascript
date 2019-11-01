@@ -1,3 +1,6 @@
+/**
+ * 链表迭代
+ */
 const list = require("./index");
 
 function iter(list) {
