@@ -21,7 +21,16 @@ module.exports = {
             val: 1,
             next: {
                 val: 2,
-                next: null
+                next: {
+                    val: 2,
+                    next: {
+                        val: 1,
+                        next: {
+                            val: 1,
+                            next: null
+                        }
+                    }
+                }
             }
         }
     },
@@ -42,6 +51,13 @@ module.exports = {
                     }
                 }
             }
+        }
+    },
+    list4: {
+        val: 1,
+        next: {
+            val: 2,
+            next: null
         }
     }
 }

@@ -41,3 +41,6 @@ setInterval(() => {
 console.log('require.resolve====', require.resolve('./test'))
 // 返回解析过程中解析过的所有路径
 console.log('require.resolve.paths====', require.resolve.paths('ddd'))
+
+
+require("./mo2")
