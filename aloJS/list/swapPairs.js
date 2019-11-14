@@ -10,5 +10,17 @@
  * @return {ListNode}
  */
 var swapPairs = function (head) {
+    if (!head || !head.next) return head;
 
+    let i = 0;
+    let cur = head
+    let next = cur.next;
+    let res = {};
+    while (cur) {
+
+    }
+    return head
 };
+
+const { list1 } = require("./sortedList")
+console.log(JSON.stringify(swapPairs(list1)))
