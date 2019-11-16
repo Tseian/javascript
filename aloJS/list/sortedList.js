@@ -22,14 +22,8 @@ module.exports = {
             next: {
                 val: 2,
                 next: {
-                    val: 2,
-                    next: {
-                        val: 1,
-                        next: {
-                            val: 1,
-                            next: null
-                        }
-                    }
+                    val: 3,
+                    next: null
                 }
             }
         }
@@ -37,7 +31,7 @@ module.exports = {
     list3: {
         val: 10,
         next: {
-            val: 1,
+            val: 34,
             next: {
                 val: 23,
                 next: {
@@ -45,7 +39,7 @@ module.exports = {
                     next: {
                         val: 22,
                         next: {
-                            val: 3,
+                            val: 35,
                             next: null
                         }
                     }
@@ -65,6 +59,21 @@ module.exports = {
         next: {
             val: 8,
             next: null
+        }
+    },
+    list6: {
+        val: 0,
+        next: {
+            val: 1,
+            next:
+            {
+                val: 2,
+                next: null,
+                q: {
+                    val: 4,
+                    next: null
+                }
+            }
         }
     }
 }

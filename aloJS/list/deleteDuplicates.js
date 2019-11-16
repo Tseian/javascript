@@ -10,22 +10,28 @@
  * @return {ListNode}
  */
 var deleteDuplicates = function (head) {
-    if (!head) return head
-    let cur = head.next;
-    let pre = head;
-    let res = pre;
-    while (cur) {
-        if (pre.val == cur.val) {
-            cur = cur.next;
-            pre.next = null;
-            continue;
+    if (!head || !head.next) return head
+    let res = {};
+    let c = head;
+    while (c) {
+        res[c.val] = res[c.val] || 0;
+        res[c.val]++;
+        c = c.next;
+    }
+    c = head;
+    let pre = {};
+    pre.next = head;
+    let p = pre;
+    while (c) {
+        if (res[c.val] > 1) {
+            p.next = c.next;
+        } else {
+            p = c;
         }
-        pre.next = cur;
-        pre = pre.next;
-        cur = cur.next;
-    };
-    return res;
+        c = c.next
+    }
+    return pre.next;
 }
-
-const { list2 } = require("./sortedList")
-console.log(JSON.stringify(deleteDuplicates(list2)))
+ 
+const { list1 } = require("./sortedList")
+console.log(JSON.stringify(deleteDuplicates(list1)))
