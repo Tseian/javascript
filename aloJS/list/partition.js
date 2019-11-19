@@ -11,29 +11,54 @@
  * @return {ListNode}
  */
 var partition = function (head, x) {
+    if (!head || !head.next) return head;
+    let before = {};
+    let beforeH = before;
+    let after = {};
+    let afterH = after;
+    while (head) {
+        if (head.val < x) {
+            before.next = head;
+            before = before.next;
+        } else {
+            after.next = head;
+            after = after.next;
+        }
+        head = head.next;
+    }
+    after.next = null;
+    before.next = afterH.next;
+    return beforeH.next;
+};
+
+var partition_ = function (head, x) {
+    if (!head || !head.next) return head;
+    let before = {};
+    let beforeH = before;
+
+    let pre;
     let c = head;
-    let res = {};
-    let t = res.next;
-    let h = res;
     while (c) {
         if (c.val < x) {
-            let tem = c.next;
-            c.next = head;
-            head = c;
-            c = tem;
-            console.log(c)
-        } else {
-
-
-
+            before.next = c;
+            before = before.next;
+            if (!pre) {
+                head = head.next;
+            } else {
+                pre.next = c.next;
+            }
+            c = c.next;
+            continue;
         }
+        pre = c;
+        c = c.next;
     }
-
-    return head
-
+    before.next = head;
+    return beforeH.next;
 };
 
 
+
 const { list3 } = require("./sortedList")
-console.log(list3)
-console.log(partition(list3, 23))
+console.log(JSON.stringify(list3))
+console.log(JSON.stringify(partition_(list3, 3)))
