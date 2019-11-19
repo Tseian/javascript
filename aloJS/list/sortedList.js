@@ -68,8 +68,7 @@ module.exports = {
             next:
             {
                 val: 2,
-                next: null,
-                q: {
+                next: {
                     val: 4,
                     next: null
                 }
