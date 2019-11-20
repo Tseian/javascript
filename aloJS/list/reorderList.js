@@ -32,6 +32,12 @@ var reorderList = function (head) {
     return head;
 };
 
+var reorderList_ = function (head) {
+    if (!head && !head.next) return head;
+    let fast = head;
+    let slow = head;
+};
+
 const { list3 } = require("./sortedList");
 console.log("list3", JSON.stringify(list3));
-console.log("after----", JSON.stringify(reorderList(list3)));
+console.log("after----", JSON.stringify(reorderList_(list3)));
