@@ -36,6 +36,34 @@ var reorderList_ = function (head) {
     if (!head && !head.next) return head;
     let fast = head;
     let slow = head;
+
+    let pre;
+    while (fast) {
+        pre = slow;
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    pre.next = null;
+
+    pre = null;
+    let c = slow;
+    while (c) {
+        let tem = c.next;
+        c.next = pre;
+        pre = c;
+        c = tem;
+    }
+
+    fast = head;
+    while (fast) {
+        let f = fast.next;
+        let h = pre.next;
+        h.next = f;
+        fast.next = h;
+    }
+
+    return fast
+
 };
 
 const { list3 } = require("./sortedList");

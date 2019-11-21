@@ -39,7 +39,7 @@ module.exports = {
                     next: {
                         val: 5,
                         next: {
-                            val: 2,
+                            val: 1,
                             next: null
                         }
                     }
