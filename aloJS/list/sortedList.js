@@ -29,17 +29,17 @@ module.exports = {
         }
     },
     list3: {
-        val: 10,
+        val: 1,
         next: {
-            val: 34,
+            val: 4,
             next: {
-                val: 23,
+                val: 3,
                 next: {
-                    val: 23,
+                    val: 2,
                     next: {
-                        val: 22,
+                        val: 5,
                         next: {
-                            val: 35,
+                            val: 1,
                             next: null
                         }
                     }
@@ -68,12 +68,26 @@ module.exports = {
             next:
             {
                 val: 2,
-                next: null,
-                q: {
+                next: {
                     val: 4,
                     next: null
                 }
             }
         }
+    },
+    list7: {
+        "$id": "1",
+        "next": {
+            "$id": "2",
+            "next": null,
+            "random": {
+                "$ref": "2"
+            },
+            "val": 2
+        },
+        "random": {
+            "$ref": "2"
+        },
+        "val": 1
     }
 }
