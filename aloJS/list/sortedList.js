@@ -29,19 +29,16 @@ module.exports = {
         }
     },
     list3: {
-        val: 1,
+        val: 8,
         next: {
-            val: 4,
+            val: 2,
             next: {
-                val: 3,
+                val: 7,
                 next: {
-                    val: 2,
+                    val: 6,
                     next: {
-                        val: 5,
-                        next: {
-                            val: 1,
-                            next: null
-                        }
+                        val: 1,
+                        next: null
                     }
                 }
             }
