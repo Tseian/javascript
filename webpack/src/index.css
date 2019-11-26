@@ -1,0 +1,9 @@
+#app {
+    color: red;
+}
+
+.testImage {
+    background-image: url(./images/test.jpg);
+    width: 500px;
+    height: 500px;
+}
