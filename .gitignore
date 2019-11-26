@@ -2,3 +2,5 @@ node_modules
 .vscode
 typings
 redis/.vscode
+webpack/node_modules
+webpack/dist
