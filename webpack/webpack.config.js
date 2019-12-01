@@ -2,6 +2,8 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const devMode = process.env.NODE_ENV !== 'production'
 module.exports = {
     entry: {
         index: "./src/index.js",
@@ -19,8 +21,12 @@ module.exports = {
                 loader: ["expose-loader"]
             },
             {
-                test: /\.css$/,
-                loader: ["style-loader", "css-loader"]
+                test: /\.(c|le)ss$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    "less-loader"
+                ]
             },
             {
                 test: /\.(png|jpg|gif|svg|bmp)/,
@@ -30,10 +36,10 @@ module.exports = {
                         outputPath: "images/"
                     }
                 }
-            }, 
+            },
             {
-                test: /\.(html|htm)/,
-                use: "html-withimg-loader"
+                test: /\.(htm|html)$/i,
+                loader: 'html-withimg-loader'
             }
         ]
     },
@@ -52,13 +58,10 @@ module.exports = {
                 removeAttributeQuotes: true
             }
         }),
-        // new HtmlWebpackPlugin({
-        //     template: "./src/index2.html",
-        //     filename: "index2.html",
-        //     title: "index2",
-        //     hash: true,
-        //     chunks: ["common", 'index2']
-        // })
+        new MiniCssExtractPlugin({
+            filename: "css/[name].css",
+            chunkFilename: "[id].css"
+        })
     ],
     devServer: {
         contentBase: "./dist",
