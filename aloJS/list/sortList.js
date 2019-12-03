@@ -87,8 +87,36 @@ function merge(l1, l2) {
     return dummyHead.next;
 }
 
+var sortedList_ = function (head) {
+    let dummyHead = {};
+    dummyHead.next = head;
+    let n = 0;
+    let p = head;
+    while (p) {
+        p = p.next;
+        n++;
+    }
+
+    for (let size = 1; size < n; size *= 2) {
+        let cur = dummyHead.next;
+        let tail = dummyHead;
+
+        while (cur) {
+            let left = cur;
+            let right = cut(left, size);
+            cur = cut(right, size);
+            tail.next = merge(left, right);
+
+            while (tail.next) {
+                tail = tail.next;
+            }
+        }
+    }
+    return dummyHead.next;
+}
+
 const { list3, list1 } = require("./sortedList");
 
 console.log(JSON.stringify(list3));
 // console.log(JSON.stringify(list1));
-console.log(JSON.stringify(sortList(list3))); 
+console.log(JSON.stringify(sortedList_(list3))); 

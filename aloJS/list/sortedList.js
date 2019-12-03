@@ -45,17 +45,26 @@ module.exports = {
         }
     },
     list4: {
-        val: 1,
+        val: 5,
         next: {
-            val: 8,
-            next: null
+            val: 6,
+            next: {
+                val: 4,
+                next: null
+            }
         }
     },
     list5: {
-        val: 9,
+        val: 7,
         next: {
-            val: 8,
-            next: null
+            val: 2,
+            next: {
+                val: 4,
+                next: {
+                    val: 3,
+                    next: null
+                }
+            }
         }
     },
     list6: {
