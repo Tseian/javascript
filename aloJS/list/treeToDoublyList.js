@@ -10,34 +10,57 @@
  * @param {Node} root
  * @return {Node}
  */
-let first, last;
-var treeToDoublyList = function (root) {
-    if (root == null)
-        return root;
 
+var treeToDoublyList = function (root) {
+    if (!root) return root;
+    let first, last;
+    function helper(node) {
+        if (node) {
+            helper(node.left);
+            if (last) {
+                last.right = node;
+                node.left = last;
+            } else {
+                first = node;
+            }
+            last = node;
+            helper(node.right);
+        }
+    }
 
     helper(root);
     // close DLL
     last.right = first;
     first.left = last;
     return first;
-
 };
 
-function helper(node) {
-    if (node) {
-        helper(node.left)
-        if (last) {
-            last.right = node
-            node.left = last
+
+
+
+var treeToDoublyList_ = function (root) {
+    if (!root)
+        return root;
+    let pre = {};
+    let res = pre;
+    let stack = [];
+    while (root || stack[0]) {
+        if (root) {
+            stack.push(root);
+            root = root.left;
         } else {
-            first = node
+            root = stack.pop();
+            pre.right = root;
+            root.left = pre;
+            pre = root;
+            root = root.right;
         }
-        last = node;
-        helper(node.right);
     }
-}
+    pre.right = res.right;
+    res.right.left = pre;
+    return res.right;
+};
 
 const { bst } = require("../btree/btree");
 
-console.log(treeToDoublyList(bst));
+console.log(treeToDoublyList_(bst));
