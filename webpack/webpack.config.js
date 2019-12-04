@@ -37,10 +37,10 @@ module.exports = {
                     }
                 }
             },
-            {
-                test: /\.(htm|html)$/i,
-                loader: 'html-withimg-loader'
-            }
+            // {
+            //     test: /\.(htm|html)$/i,
+            //     loader: 'html-withimg-loader'
+            // }
         ]
     },
     plugins: [

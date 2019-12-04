@@ -29,15 +29,15 @@ module.exports = {
         }
     },
     list3: {
-        val: 7,
+        val: 1,
         next: {
-            val: 6,
+            val: 2,
             next: {
-                val: 5,
+                val: 3,
                 next: {
                     val: 4,
                     next: {
-                        val: 3,
+                        val: 9,
                         next: null
                     }
                 }
@@ -54,7 +54,7 @@ module.exports = {
     list5: {
         val: 9,
         next: {
-            val: 8,
+            val: 9,
             next: null
         }
     },
