@@ -51,13 +51,12 @@ var splitListToParts = function (root, k) {
         h = h.next;
     }
     let res = [];
-    let size = Math.floor(n / k) + 1;
-    n = size;
-    let quyu = n % k
+    let size = Math.floor(n / k);
+    let quyu = n % k;
     for (let i = 0; i < k; i++) {
         res[i] = root;
-        if (quyu--) root = cut(root, size + 1);
-        else root = cut(root, size)
+        if (quyu-- > 0) root = cut(root, size + 1);
+        else root = cut(root, size || 1)
     }
     return res;
 };
