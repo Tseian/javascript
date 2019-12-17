@@ -18,3 +18,15 @@ var maxDepth = function (root) {
         return l > r ? l + 1 : r + 1;
     }
 };
+
+
+var maxDepth_ = function (root) {
+    if (!root) {
+        return 0;
+    }
+    let stack = [];
+    let n = 0;
+
+
+
+};
