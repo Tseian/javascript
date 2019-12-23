@@ -80,5 +80,34 @@ module.exports = {
                 right: null
             }
         }
+    },
+    abc: {
+        val: "A",
+        left: {
+            val: "B",
+            left: {
+                val: "D",
+                left: null,
+                right: null
+            },
+            right: {
+                val: "E",
+                left: null,
+                right: null
+            }
+        },
+        right: {
+            val: "C",
+            left: {
+                val: "F",
+                left: null,
+                right: null
+            },
+            right: {
+                val: "G",
+                left: null,
+                right: null
+            }
+        }
     }
 }
