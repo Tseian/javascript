@@ -34,5 +34,5 @@ function postorder_iterate(root) {
     }
 }
 
-// postorder_iterate(btr.bst);
+postorder_iterate(btr.bst);
 // inorder_recursion(btr.bst)
