@@ -14,6 +14,8 @@ emitter.on('newListener', (event, listener) => {
     console.log("new listener", event);
 });
 
+console.log(emitter.on.toString())
+
 
 emitter.on('removeListener', (event, listener) => {
     console.log("removeListener", event);
@@ -27,6 +29,7 @@ emitter.addListener("con", function (arg) {
     console.log(arg)
 })
 
+
 // 不要使用箭头函数，箭头函数定义的监听函数 this会指向创建是的环境
 emitter.on("stop", function (arg) {
     this.stop();
@@ -38,6 +41,7 @@ emitter.emit('con', 'con');
 setTimeout(() => {
     emitter.emit('stop', 'stop');
 }, 1000 * 3)
+
 
 //  emitter.listenerCount() 统计当前某个事件注册有多少个 监听器
 
