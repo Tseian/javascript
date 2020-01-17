@@ -33,3 +33,4 @@ var f1 = function (n) {
 }
 
 console.log(f1(50))
+console.log(climbStairs(50))

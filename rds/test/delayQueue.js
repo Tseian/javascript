@@ -19,7 +19,6 @@ async function delay(value = 'helloworld') {
     return 'success';
 }
 
-
 async function execAsynQueue(key) {
     try {
         let res = await redis.zrangebyscore('delay_queue', 0, Date.now());

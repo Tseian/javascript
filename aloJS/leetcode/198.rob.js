@@ -1,0 +1,3 @@
+var rob = function (nums) {
+
+};
