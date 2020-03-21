@@ -17,21 +17,16 @@ function bfs(root) {
     }
 }
 
-const btree = require("./btree")
-bfs(btree.bst)
 
-/*
-function bfs(root) {
-    let stack = [];
-    stack.push(root);
-    while (stack.length) {
-        let tem = stack.pop();
-        console.log(tem.val)
-        if (tem.right) stack.push(tem.right);
-        if (tem.left) stack.push(tem.left);
-    }
-}
-
-const btree = require("./btree")
-console.log(JSON.stringify(btree.abc))
-*/
+// function bfs(root) {
+//     let stack = [];
+//     stack.push(root);
+//     while (stack.length) {
+//         let tem = stack.pop();
+//         console.log(tem.val)
+//         if (tem.right) stack.push(tem.right);
+//         if (tem.left) stack.push(tem.left);
+//     }
+// }
+// const btree = require("./btree")
+// bfs(btree.bst)

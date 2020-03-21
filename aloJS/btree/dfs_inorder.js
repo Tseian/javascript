@@ -28,6 +28,31 @@ function inorder_iterate(root) {
     }
 }
 
-inorder_iterate(btr.bst);
+// inorder_iterate(btr.bst);
 
 // inorder_recursion(btr.bst)
+
+function dfs(node) {
+    if (!node) return
+    dfs(node.left);
+    console.log(node.val);
+    dfs(node.right);
+}
+// dfs(btr.bst);
+
+
+function bfs(node) {
+    if (!node) return
+    let stack = [node];
+    while (stack.length) {
+        let n = stack.length;
+        for (let i = 0; i < n; i++) {
+            let s = stack.shift();
+            console.log(s.val)
+            if (s.left) stack.push(s.left);
+            if (s.right) stack.push(s.right);
+        }
+    }
+}
+bfs(btr.bst);
+console.table(btr.bst)

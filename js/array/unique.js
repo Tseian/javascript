@@ -27,6 +27,12 @@ function unique(arr, index) {
     }
 }
 
-const result = unique([1, 2, 2, 3, 4, [3, 3, 4, 4, [4, 4, 4, 4, 6, 6, 6, 6]]], 0)
+function unique1(nums) {
+    return Array.from(new Set(nums.flat(Infinity)))
+}
 
-console.log(result) // [ 1, 2, 3, 4, [ 3, 4, [ 4,6,6,6, 6 ] ] ]
+// const result = unique([1, 2, 2, 3, 4, [3, 3, 4, 4, [4, 4, 4, 4, 6, 6, 6, 6]]], 0)
+
+console.log(unique1([1, 2, 2, 3, 4, [3, 3, 4, 4, [4, 4, 4, 4, 6, 6, 6, 6]]]))
+
+// console.log(result) // [ 1, 2, 3, 4, [ 3, 4, [ 4,6,6,6, 6 ] ] ]
